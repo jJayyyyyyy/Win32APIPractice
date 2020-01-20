@@ -1,4 +1,4 @@
-##  Compile
+##  Compile-and-Run
 
 We can just create an empty `Windows Desktop Application` with `Visual Studio 2017` then write-compile-run it.
 
