@@ -1,2 +1,2 @@
-gcc Line.c -lgdi32 -mwindows -o Line
-Line
+gcc Polyline.c -lgdi32 -mwindows -o Polyline
+Polyline
