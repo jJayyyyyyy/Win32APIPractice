@@ -8,7 +8,7 @@
 #define PI_DIV_2 1.57
 #define FPS 40
 #define RADIUS 32
-#define SPEED 4
+#define SPEED 2
 #define ID_TIMER1 1
 #define ID_TIMER2 2
 #define BLACK RGB(0,0,0)
@@ -163,18 +163,18 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
             GetClientRect(hwnd, &rect);
             ball.setPosition(rect.right / 2, rect.bottom / 2);
             // move the ball
-            // SetTimer(hwnd, ID_TIMER1, 10, NULL);
+            SetTimer(hwnd, ID_TIMER1, 50, NULL);
             // refresh the frame
             SetTimer(hwnd, ID_TIMER2, 1000/FPS, NULL);
             return 0;
         case WM_TIMER:
             switch(wParam)
             {
-                // case ID_TIMER1:
-                //     ball.move(rect);    
-                //     break;
+                case ID_TIMER1:
+                    ball.move(rect);    
+                    break;
                 case ID_TIMER2:
-                    ball.move(rect);
+                    // ball.move(rect);
                     InvalidateRect(hwnd, NULL, TRUE);
                     break;
             }
