@@ -153,6 +153,8 @@ void DrawBall(HDC hdc, Ball & ball)
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     HDC hdc;
+    HGDIOBJ nullBrush = GetStockObject(NULL_BRUSH);
+    HGDIOBJ originHGDIOBJ = SelectObject(hdc, nullBrush);
     PAINTSTRUCT ps;
     srand(time(NULL));
     static RECT rect;
